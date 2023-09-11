@@ -1,4 +1,4 @@
-def get_column(file_name, query_column, query_value, result_column):
+def get_column(file_name, query_column, query_value, result_column=1):
     results_arr = []
     with open(file_name, 'r') as file:
         for line in file: # For each line: split into an array
