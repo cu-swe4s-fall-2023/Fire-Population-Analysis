@@ -70,6 +70,3 @@ One example works, the other two throws errors.
 ```shell
 $ python print_fires.py --country Italy --country_column 0 --fires_column 1 --file_name Agrofood_co2_emission.csv
 ```
-
-## License <a name="license"></a>
-MIT License goes here. Update with generation with github...
