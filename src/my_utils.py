@@ -1,32 +1,39 @@
-def get_column(file_name, query_column, query_value, result_column=1):
+def get_column(file_name, query_column, query_value, result_column=3):
     """
     Gets data from CSV file
 
     :param file_name: (str) name of the CSV file
     :param query_column: (int) index of the column in which to search for the query value
     :param query_value: (str) value to search for in the specified query column
-    :param result_column: (int) OPTIONAL index of the column where to get data, default 1
+    :param result_column: (int) OPTIONAL index of the column where to get data, default 3
     :return: array of ints
     """
     results_arr = []
     try:
         with open(file_name, 'r') as file:
-            for line in file: # For each line: split into an array
+            for line in file:  # For each line: split into an array
                 columns = line.strip().split(',')
-                # print("columns: ", columns)
-                # Check to see if the value in query_colum position matches the value stored in query_value
-                query_column_value = columns[query_column] #Get query_column_value
-                if query_column_value == query_value:#if true, add variable from result_column to holding result array
-                    try:
-                        results_value = int(columns[result_column]) # Make sure year is being output as an int
-                        results_arr.append(results_value)
-                    except ValueError:
-                        print('Could not convert year into an int')
+                if len(columns) > result_column:  # check if the specified result_column exists
+                    # Check to see if the value in query_column position matches the value stored in query_value
+                    query_column_value = columns[query_column]  # Get query_column_value
+                    if query_column_value == query_value:
+                        try:
+                            results_value = float(columns[result_column])  # Make sure year is being output as an int
+                            results_arr.append(results_value)
+                        except ValueError:
+                            print(f'Could not convert column {result_column} value into an int')
+                else:
+                    print(f'Result column {result_column} does not exist in line: {line}')
+
+        if not results_arr:
+            raise ValueError('Cannot find mean of an empty array')
     except FileNotFoundError:
         print(f'Could not find {file_name}.')
+        raise
     except Exception as e:
         print(f'An unexpected error occurred, error {e}')
     return results_arr
+
 
 def find_mean(data):
     """
@@ -35,6 +42,8 @@ def find_mean(data):
     :param data: Array of ints
     :return: float: Mean value of the ints in the array
     """
+    if len(data) == 0:
+        raise ValueError('Cannot find mean of an empty array')
     total = sum(data)
     mean = total/len(data)
     return mean
@@ -47,6 +56,9 @@ def find_median(data):
     :return: float: the median of the integers in the data array
     """
     len_of_data = len(data)
+    if len_of_data == 0:
+        return None
+
     sort_data = sorted(data) # Sorted function will return the array from smallest -> largest
     find_middle = len_of_data // 2
     if (len_of_data % 2) == 0:
@@ -66,6 +78,9 @@ def find_std_dev(data):
     :param data: an array of ints
     :return: float: standard deviation of the array
     """
+    if len(data) == 0:
+        raise ValueError('cannot find std dev of an empty array')
+
     mean = find_mean(data)
     squared_diff = []
     for i in data:

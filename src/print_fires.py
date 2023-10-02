@@ -10,22 +10,26 @@ def main():
 
         parser.add_argument('--country', type=str, help='Name of country')
         parser.add_argument('--country_column', type=int, help='Column index for the country')
-        parser.add_argument('--fires_column', type=int, help='Column index for the amount of fires')
+        parser.add_argument('--fires_column', type=int, default=2, help='Column index for the amount of fires')
         parser.add_argument('--file_name', type=str, help='Name of data file')
+        parser.add_argument('--operation', type=str, choices=['mean', 'median', 'stddev'], help='Specify the operation to perform (mean, median, stddev)')
         args = parser.parse_args()
 
-        fires_country = get_column(file_name=args.file_name, query_column=args.country_column, query_value=args.country)
+        fires_country = get_column(file_name=args.file_name, query_column=args.country_column, query_value=args.country, result_column=args.fires_column)
 
-        # testing new statistics functions:
-        mean_fires = find_mean(fires_country)
-        median_fires = find_median(fires_country)
-        std_dev_fires = find_std_dev(fires_country)
+        if args.operation == 'mean':
+            result = find_mean(fires_country)
+        elif args.operation == 'median':
+            result = find_median(fires_country)
+        elif args.operation == 'std_dev':
+            result = find_std_dev(fires_country)
+        else:
+            result = fires_country
 
+        print(f'{args.country} fires: {fires_country}')
 
-        print(f'Years of {args.country} Fires: {fires_country}')
-        print(f'Mean fires: {mean_fires}')
-        print(f'Median fires: {median_fires}')
-        print(f'Std deviation of fires: {std_dev_fires}')
+        if args.operation:
+            print(f'{args.operation} of fires: {result}')
 
     except Exception as e:
         print(f'Some unexpected error occurred, error: {e}')
