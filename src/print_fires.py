@@ -14,9 +14,14 @@ def main():
         parser.add_argument('--file_name', type=str, help='Name of data file')
         parser.add_argument('--operation', type=str, choices=['mean', 'median', 'stddev'], help='Specify the operation to perform (mean, median, stddev)')
         args = parser.parse_args()
-
+        
         fires_country = get_column(file_name=args.file_name, query_column=args.country_column, query_value=args.country, result_column=args.fires_column)
 
+        if not fires_country:
+            print(f'Country not found: {args.country}')
+            return
+        
+        
         if args.operation == 'mean':
             result = find_mean(fires_country)
         elif args.operation == 'median':
