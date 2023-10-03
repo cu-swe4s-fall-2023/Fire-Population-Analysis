@@ -15,6 +15,7 @@ Uses repo from assignment-2 (python refresher).
 - [Updates](#updates)
   - [V 1.0](#v-1)
   - [V 2.0](#v-2)
+  - [V 3.0](#v-3)
 - [License](#license)
 
 ## Documentation <a name="documentation"></a>
@@ -31,6 +32,31 @@ Uses repo from assignment-2 (python refresher).
     - `query_column` (int): Column index for the query condition.
     - `query_value` (str): Value used to find a match in the query column (e.g., country name).
     - `result_column` (int, optional): Column index for the result. Default is 1, representing the year when the fire occurred for the specified country.
+- Raises a `ValueError` if the array is empty or if the specified result column does not exist.
+
+#### `find_mean(data)`
+- Calculates the mean of a list of integers.
+- Parameters:
+    - `data` (list): Array of integers.
+- Returns:
+    - `float`: Mean value of the integers in the array.
+- Raises a `ValueError` if the array is empty.
+
+#### `find_median(data)`
+- Calculates the median of an array of integers.
+- Parameters:
+    - `data` (list): Array of integers.
+- Returns:
+    - `float`: The median of the integers in the data array, or `None` if the array is empty.
+
+#### `find_std_dev(data)`
+- Calculates the standard deviation of an array of integers.
+- Parameters:
+    - `data` (list): An array of integers.
+- Returns:
+    - `float`: Standard deviation of the array.
+- Raises a `ValueError` if the array is empty.
+
 
 ### `print_fires.py` <a name="print-fires"></a>
 This script will do brief analysis on fires by input country.
@@ -41,13 +67,39 @@ Allows user to input parameters via command line.
 - `--country_column` (int): Specifies the column index for the country in the CSV file.
 - `--fires_column` (int): Specifies the column index for the amount of fires in the CSV file
 - `--file_name` (str): Specifies the name of the data file in CSV format.
+- `--operation` (str): Specifies the statistics operation to perform (e.g., "mean", "median", "stddev").
 
 ### `run.sh` <a name="runsh"></a>
-This shell script includes 3 examples for running `print_fires.py`, as required by the assignment.
-One example works, the other two throws errors. 
+~~This shell script includes 3 examples for running `print_fires.py`, as required by the assignment.~~
+<br>
+With the 3.0 release, `run.sh` will now contain two examples of how `print_fires.py` could be used.
+
+#### Example that works:
+
+```shell
+python print_fires.py --country Italy --country_column 0 --fires_column 1 --file_name ../Agrofood_co2_emission.csv
+```
+
+#### Examples that give errors:
+```shell
+python print_fires.py --country USSR --country_column 0 --fires_column 3 ../Agrofood_c02.csv
+python print_fires.py --country "United States of America" --country_column 0 --fires_column 3 --file_name ../Agrofood_co2_emission.csv
+```
+
 
 ## Updates <a name="updates"></a>
 
+### V 3.0 <a name="v-3"></a>
+-Added additional functionality to print_fires.py
+Enhanced error handling
+Updated documentation
+Highlight any changes or additions to the documentation to help users understand the new features.
+Improved performance
+If there are any performance optimizations or speed improvements, mention them here.
+Bug fixes
+List any bug fixes or issues that have been resolved in this version.
+Updated unit tests
+If you've added or modified unit tests to ensure the reliability of your code, mention it here.
 
 ### V 2.0 <a name="v-2"></a> 
 - Added `main()` function in `print_fires.py`
@@ -63,10 +115,9 @@ One example works, the other two throws errors.
 
 
 ## Usage <a name="usage"></a>
-- Make sure `run.sh` is executable with `$ chmod +x run.sh`.
 - Run by making sure `print_fires.py` is in the same directory as `run.sh`, and execute with `$ ./run.sh`.
 - Example of how to run `print_fires.py` with argparse:
 
 ```shell
-$ python print_fires.py --country Italy --country_column 0 --fires_column 1 --file_name Agrofood_co2_emission.csv
+$ python ../src/print_fires.py --country Italy --country_column 0 --fires_column 1 --file_name Agrofood_co2_emission.csv
 ```

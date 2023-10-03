@@ -18,7 +18,7 @@ def get_column(file_name, query_column, query_value, result_column=3):
                     query_column_value = columns[query_column]  # Get query_column_value
                     if query_column_value == query_value:
                         try:
-                            results_value = float(columns[result_column])  # Make sure year is being output as an int
+                            results_value = float(columns[result_column])  # Make sure year is being output as not a string
                             results_arr.append(results_value)
                         except ValueError:
                             print(f'Could not convert column {result_column} value into an int')
@@ -79,7 +79,7 @@ def find_std_dev(data):
     :return: float: standard deviation of the array
     """
     if len(data) == 0:
-        raise ValueError('cannot find std dev of an empty array')
+        raise ValueError('Cannot find std dev of an empty array')
 
     mean = find_mean(data)
     squared_diff = []

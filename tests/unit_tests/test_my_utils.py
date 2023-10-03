@@ -1,6 +1,9 @@
 import unittest
 import random
-from src.my_utils import *
+import sys
+sys.path.insert(0, '../../src')  # noqa
+from my_utils import *
+
 
 class TestUtils(unittest.TestCase):
     def test_get_column_positive(self):
