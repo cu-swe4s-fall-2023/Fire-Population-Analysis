@@ -1,4 +1,19 @@
 #!/bin/bash
+
+test -e ssshtest || wget -q https://raw.githubusercontent.com/ryanlayer/ssshtest/master/ssshtest
+
+source ssshtest
+
+STOP_ON_FAIL=0
+
+cd ../../src
+
+run test_mean python print_fires.py --country Italy --country_column 0 --fires_column 2 --file_name ../Agrofood_co2_emission.csv --operation mean
+assert_no_stderr
+#assert_exit_code 0
+##assert_in_stdout 7.1188
+#assert_in_stdout "Italy fires"
+#!/bin/bash
 cd ../../src 
 
 test -e ssshtest || wget -q https://raw.githubusercontent.com/ryanlayer/ssshtest/master/ssshtest
