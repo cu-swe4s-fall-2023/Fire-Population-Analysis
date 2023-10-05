@@ -16,6 +16,7 @@ Uses repo from assignment-2 (python refresher).
   - [V 1.0](#v-1)
   - [V 2.0](#v-2)
   - [V 3.0](#v-3)
+  - [V 3.1](#v-3.1)
 - [License](#license)
 
 ## Documentation <a name="documentation"></a>
@@ -89,6 +90,9 @@ python print_fires.py --country "United States of America" --country_column 0 --
 
 ## Updates <a name="updates"></a>
 
+### V 3.1 <a name="v-3.1"></a>
+- Added documentation on how to run tests.
+
 ### V 3.0 <a name="v-3"></a>
 - Added some basic statistics functions to `my_utils.py`
 - Added additional functionality to `print_fires.py` for statistics functions.
@@ -109,9 +113,23 @@ python print_fires.py --country "United States of America" --country_column 0 --
 
 
 ## Usage <a name="usage"></a>
+- Start from clone
 - Run from main project directory, execute with `$ ./run.sh`.
 - Example of how to run `print_fires.py` with argparse:
 
 ```shell
 $ python print_fires.py --country Italy --country_column 0 --fires_column 1 --file_name Agrofood_co2_emission.csv
+```
+
+- Run unit tests from ../tests/unit_tests/ with:
+
+```shell 
+$ python test_my_utils.py
+```
+
+- Run function tests from ../tests/function_tests/ 
+- For example: 
+
+```shell
+$ ./test_print_fires.sh
 ```
