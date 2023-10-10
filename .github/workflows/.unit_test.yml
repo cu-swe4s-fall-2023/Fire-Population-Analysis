@@ -5,6 +5,10 @@ on:
     branches: [ master ]
 
 jobs:
+  defaults:
+    run:
+      shell: bash -el {0}
+
   run_unit_tests:
     runs-on: ubuntu-latest
     steps:
@@ -12,9 +16,13 @@ jobs:
       - run: |
           cd tests/unit_tests
           python -m unittest test_my_utils
+
   run_function_tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          environment-file: environment.yml
       - run: |
-          cd 
+          cd tests/function_tests
