@@ -139,6 +139,7 @@ $ ./test_print_fires.sh
 ```
 
 ## LICENSE
+
 MIT License
 
 Copyright (c) 2023 cu-swe4s-fall-2023
