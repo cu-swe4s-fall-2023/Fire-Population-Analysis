@@ -1,6 +1,7 @@
 import unittest
 import random
 import sys
+
 sys.path.insert(0, '../../src')  # noqa
 from my_utils import *
 
@@ -10,10 +11,16 @@ class TestUtils(unittest.TestCase):
         file_name = '../../Agrofood_co2_emission.csv'
         query_column = 0
         query_value = 'Afghanistan'
-        expected_result = [1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
-        result = get_column(file_name, query_column, query_value, result_column = 1)
+        expected_result = [1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997,
+                           1998,
+                           1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006,
+                           2007,
+                           2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015,
+                           2016,
+                           2017, 2018, 2019, 2020]
+        result = get_column(file_name, query_column, query_value,
+                            result_column=1)
         self.assertEqual(result, expected_result)
-
 
     def test_get_column_negative(self):
         file_name = '../../Agrofood_co2_emission.csv'
@@ -28,10 +35,12 @@ class TestUtils(unittest.TestCase):
         query_column = 0
         query_value = 'Brazil'
         expected_result = []
-        # result = get_column(file_name, query_column, query_value, result_column=3)
+        # result = get_column(file_name, query_column, query_value,
+        # result_column=3)
         # self.assertEqual(result, expected_result)
         with self.assertRaises(FileNotFoundError):
-            result = get_column(file_name, query_column, query_value, result_column=3)
+            result = get_column(file_name, query_column, query_value,
+                                result_column=3)
 
     def test_find_mean_negative_empty_array(self):
         data = []
@@ -57,7 +66,7 @@ class TestUtils(unittest.TestCase):
     def test_find_median_positive_even_len(self):
         data = sorted(random.sample(range(1, 100), 4))
         result = find_median(data)
-        expected_result = (data[1] + data[2])/2
+        expected_result = (data[1] + data[2]) / 2
         self.assertEqual(result, expected_result)
 
     def test_find_median_negative_empty_array(self):
