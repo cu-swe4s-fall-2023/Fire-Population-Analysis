@@ -7,16 +7,17 @@ This repo contains the python project for brief data analysis of fires by countr
 Uses repo from assignment-2 (python refresher).
 
 ## Table of Contents
-- [Documentation](#documentation)
-  - [`my_utils.py`](#my-utils)
-  - [`print_fires.py`](#print-fires)
-  - [`run.sh`](#runsh)
-- [Usage](#usage)
-- [Updates](#updates)
-  - [V 1.0](#v-1)
-  - [V 2.0](#v-2)
-  - [V 3.0](#v-3)
-  - [V 3.1](#v-3.1)
+- [Documentation](#documentation-a-namedocumentationa)
+  - [`my_utils.py`](#myutilspy-a-namemy-utilsa)
+  - [`print_fires.py`](#printfirespy-a-nameprint-firesa)
+  - [`run.sh`](#runsh-a-namerunsha)
+- [Usage](#usage-a-nameusagea)
+- [Updates](#updates-a-nameupdatesa)
+  - [V 1.0](#v-10-a-namev-1a)
+  - [V 2.0](#v-20-a-namev-2a-)
+  - [V 3.0](#v-30-a-namev-3a)
+  - [V 3.1](#v-31-a-namev-31a)
+  - [V 4.0](#v-40-a-namev-4a)
 - [License](#license)
 
 ## Documentation <a name="documentation"></a>
@@ -90,6 +91,9 @@ python print_fires.py --country "United States of America" --country_column 0 --
 
 ## Updates <a name="updates"></a>
 
+### V 4.0 <a name="v-4"></a>
+- Implemented automated testing on branch push and pull requests on main branch.
+
 ### V 3.1 <a name="v-3.1"></a>
 - Added documentation on how to run tests.
 
@@ -133,3 +137,27 @@ $ python test_my_utils.py
 ```shell
 $ ./test_print_fires.sh
 ```
+
+## LICENSE
+
+MIT License
+
+Copyright (c) 2023 cu-swe4s-fall-2023
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
