@@ -7,17 +7,17 @@ This repo contains the python project for brief data analysis of fires by countr
 Uses repo from assignment-2 (python refresher).
 
 ## Table of Contents
-- [Documentation](#documentation-a-namedocumentationa)
-  - [`my_utils.py`](#myutilspy-a-namemy-utilsa)
-  - [`print_fires.py`](#printfirespy-a-nameprint-firesa)
-  - [`run.sh`](#runsh-a-namerunsha)
-- [Usage](#usage-a-nameusagea)
-- [Updates](#updates-a-nameupdatesa)
+- [Documentation](#documentation)
+  - [`my_utils.py`](#myutilspy)
+  - [`print_fires.py`](#printfirespy)
+  - [`run.sh`](#runsh)
+- [Usage](#usage)
+- [Updates](#updates)
 - [License](#license)
 
-## Documentation <a name="documentation"></a>
+## Documentation 
 
-### `my_utils.py` <a name="my-utils"></a>
+### `my_utils.py` 
 
 
 #### `get_column(file_name, query_column, query_value, result_column=1)`
@@ -55,7 +55,7 @@ Uses repo from assignment-2 (python refresher).
 - Raises a `ValueError` if the array is empty.
 
 
-### `print_fires.py` <a name="print-fires"></a>
+### `print_fires.py` 
 This script will do brief analysis on fires by input country.
 
 #### Command-line argparse
@@ -66,7 +66,7 @@ Allows user to input parameters via command line.
 - `--file_name` (str): Specifies the name of the data file in CSV format.
 - `--operation` (str): Specifies the statistics operation to perform (e.g., "mean", "median", "stddev").
 
-### `run.sh` <a name="runsh"></a>
+### `run.sh` 
 ~~This shell script includes 3 examples for running `print_fires.py`, as required by the assignment.~~
 <br>
 With the 3.0 release, `run.sh` will now contain two examples of how `print_fires.py` could be used.
@@ -84,7 +84,7 @@ python print_fires.py --country "United States of America" --country_column 0 --
 ```
 
 
-## Updates <a name="updates"></a>
+## Updates
 <details>
 <summary>Expand for version release updates</summary>
 
