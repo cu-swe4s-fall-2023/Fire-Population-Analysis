@@ -23,11 +23,11 @@ jobs:
           cd tests/function_tests
           ./test_print_fires.sh
 
-#  run_all_tests:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checout@v2
-#      - uses: mamba-org/setup-micromamba@v1
-#        with:
-#          environment-file: environment.yml
-#          environment-name: swe4s
+  run_style_checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: autopep8
+        uses: peter-evans/autopep8@v2
+        with:
+            args: --recursive --in-place --aggressive --aggressive .
