@@ -13,11 +13,6 @@ Uses repo from assignment-2 (python refresher).
   - [`run.sh`](#runsh-a-namerunsha)
 - [Usage](#usage-a-nameusagea)
 - [Updates](#updates-a-nameupdatesa)
-  - [V 1.0](#v-1)
-  - [V 2.0](#v-2-)
-  - [V 3.0](#v-3a)
-  - [V 3.1](#v-31)
-  - [V 4.0](#v-4)
 - [License](#license)
 
 ## Documentation <a name="documentation"></a>
@@ -90,31 +85,36 @@ python print_fires.py --country "United States of America" --country_column 0 --
 
 
 ## Updates <a name="updates"></a>
+<details>
+<summary>Expand for version release updates</summary>
 
-### V 4.0 <a name="v-4"></a>
+### V 4.1
+- Patched `.test.yml` to check for PEP8 style using pycodestyle action.
+
+### V 4.0 
 - Implemented automated testing on branch push and pull requests on main branch.
 
-### V 3.1 <a name="v-3.1"></a>
+### V 3.1 
 - Added documentation on how to run tests.
 
-### V 3.0 <a name="v-3"></a>
+### V 3.0 
 - Added some basic statistics functions to `my_utils.py`
 - Added additional functionality to `print_fires.py` for statistics functions.
   - Added `--operation` argparse (optional) to call statistics functionality on data.
 - Added unit tests and function tests using `ssshtest`
   - See https://github.com/ryanlayer/ssshtest for info about `ssshtest` and dependencies
 
-### V 2.0 <a name="v-2"></a> 
+### V 2.0 
 - Added `main()` function in `print_fires.py`
 - Added argsparse functionality to `print_fires.py`
 - Updated `my_utils.py` to return the output array containing ints
 - Now catches errors and exceptions with `file_name` arguments and when converting values to ints
 
-### V 1.0 <a name="v-1"></a>
+### V 1.0 
 - Improved `get_column()` Function
   - `result_column` now defaults to 1 if not specified, which will print the year of fires.
 - Added a shell script runs `print_fires.py` via Python.
-
+</details>
 
 ## Usage <a name="usage"></a>
 - Start from clone
