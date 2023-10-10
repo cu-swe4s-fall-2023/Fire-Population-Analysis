@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ master ]
+  push:
+    branches:
+      - '**'
+jobs:
+  run_unit_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          cd tests/unit_tests
+          python -m unittest test_my_utils
+
+  run_function_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          cd tests/function_tests
+          ./test_print_fires.sh
+
+#  run_all_tests:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checout@v2
+#      - uses: mamba-org/setup-micromamba@v1
+#        with:
+#          environment-file: environment.yml
+#          environment-name: swe4s
