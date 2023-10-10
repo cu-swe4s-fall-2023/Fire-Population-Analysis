@@ -1,0 +1,8 @@
+channels:
+  - conda-forge
+dependencies:
+  - pycodestyle
+  - snakemake
+  - graphviz
+  - ca-certificates
+  - openssl
