@@ -13,11 +13,11 @@ Uses repo from assignment-2 (python refresher).
   - [`run.sh`](#runsh-a-namerunsha)
 - [Usage](#usage-a-nameusagea)
 - [Updates](#updates-a-nameupdatesa)
-  - [V 1.0](#v-10-a-namev-1a)
-  - [V 2.0](#v-20-a-namev-2a-)
-  - [V 3.0](#v-30-a-namev-3a)
-  - [V 3.1](#v-31-a-namev-31a)
-  - [V 4.0](#v-40-a-namev-4a)
+  - [V 1.0](#v-1)
+  - [V 2.0](#v-2-)
+  - [V 3.0](#v-3a)
+  - [V 3.1](#v-31)
+  - [V 4.0](#v-4)
 - [License](#license)
 
 ## Documentation <a name="documentation"></a>
