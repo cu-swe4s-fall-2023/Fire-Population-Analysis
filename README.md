@@ -16,7 +16,7 @@ fdsafdsa
 This project focuses on the analysis of fires by country and year. The dataset includes information on the occurrence of fires in different countries over time. The analysis aims to provide insights into fire patterns and their relationship to factors such as urban and rural population.
 
 ## Results 
-The analysis produced three key figures:
+Analysis on the Italy dataset produced three key figures:
 
 1. Fire Count Histogram: This histogram visualizes the distribution of fire counts across different years, providing an overview of fire occurrences over time.
    
@@ -29,6 +29,10 @@ The analysis produced three key figures:
 3. Fire Count Time Series Plot: This time series plot tracks the fire counts over the years, allowing for the observation of patterns and trends in fire occurrences.
 
 <img src="C:\Users\sarah.auriemma\PycharmProjects\assignment-2-python-refresher-sauriemma11\docs\figures\Italy_time_series.png" width="50%"/>
+
+- Our brief analysis also showed some brief statistics:
+<br>
+<img src="C:\Users\sarah.auriemma\PycharmProjects\assignment-2-python-refresher-sauriemma11\docs\figures\fire_stats.png" width="50%"/>
 
 ### Methods
 - **Data Retrieval**: We retrieved the dataset, `Argrofood_co2_emission.csv`, from a publicly accessible Google Drive link using `wget`:
