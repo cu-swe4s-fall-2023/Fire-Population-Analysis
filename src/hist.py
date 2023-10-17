@@ -2,9 +2,13 @@ import sys
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 def load_data(data_file):
-    data = np.genfromtxt(data_file, delimiter=',', skip_header=0)  # Since there is no header in the example
+    data = np.genfromtxt(data_file, delimiter=',',
+                         skip_header=0)  # Since there is no header in the
+    # example
     return data
+
 
 def get_country_name(data_file):
     # Extract the country name from the file name
@@ -16,6 +20,7 @@ def get_country_name(data_file):
 
     return country_name
 
+
 def make_histogram(data, country_name):
     plt.hist(data[:, 1], bins=20, color="skyblue")
     plt.title(f"{country_name} Fire Count Histogram")
@@ -26,6 +31,7 @@ def make_histogram(data, country_name):
     plt.savefig(output_file)
     print(f"Histogram saved as '{output_file}'.")
 
+
 def make_bar_chart(data, country_name):
     years = data[:, 0].astype(int)
     urban_pop = data[:, 2]
@@ -34,8 +40,10 @@ def make_bar_chart(data, country_name):
     fig, ax = plt.subplots()
     width = 0.35
     x = np.arange(len(years))
-    ax.bar(x - width/2, urban_pop, width, label='Urban Population', color='skyblue')
-    ax.bar(x + width/2, rural_pop, width, label='Rural Population', color='lightcoral')
+    ax.bar(x - width / 2, urban_pop, width, label='Urban Population',
+           color='skyblue')
+    ax.bar(x + width / 2, rural_pop, width, label='Rural Population',
+           color='lightcoral')
 
     ax.set_xlabel("Year")
     ax.set_ylabel("Population")
@@ -47,6 +55,7 @@ def make_bar_chart(data, country_name):
     output_file = f"{country_name}_bar_chart.png"
     plt.savefig(output_file)
     print(f"Bar chart saved as '{output_file}'.")
+
 
 def make_time_series(data, country_name):
     years = data[:, 0].astype(int)  # Convert years to integers
@@ -63,6 +72,7 @@ def make_time_series(data, country_name):
     plt.tight_layout()  # Ensures that the labels fit within the plot area
     plt.savefig(output_file)
     print(f"Time series scatter plot saved as '{output_file}'.")
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
