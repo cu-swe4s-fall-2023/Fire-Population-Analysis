@@ -7,81 +7,83 @@ This repo contains the python project for brief data analysis of fires by countr
 Uses repo from assignment-2 (python refresher).
 
 ## Table of Contents
-- [Documentation](#documentation)
-  - [`my_utils.py`](#myutilspy)
-  - [`print_fires.py`](#printfirespy)
-  - [`run.sh`](#runsh)
-- [Usage](#usage)
-- [Updates](#updates)
-- [License](#license)
+fdsfdsa 
+fdsafdsa
+fdsafdsa
+
+
+## Introduction 
+This project focuses on the analysis of fires by country and year. The dataset includes information on the occurrence of fires in different countries over time. The analysis aims to provide insights into fire patterns and their relationship to factors such as urban and rural population.
+
+## Results 
+The analysis produced three key figures:
+
+1. Fire Count Histogram: This histogram visualizes the distribution of fire counts across different years, providing an overview of fire occurrences over time.
+   
+<img src="C:\Users\sarah.auriemma\PycharmProjects\assignment-2-python-refresher-sauriemma11\docs\figures\Italy_histogram.png" width="50%">
+
+2. Urban and Rural Population Bar Chart: This bar chart shows the urban and rural population for each year. It helps identify trends and potential correlations between population changes and fire occurrences.
+
+<img src="C:\Users\sarah.auriemma\PycharmProjects\assignment-2-python-refresher-sauriemma11\docs\figures\Italy_bar_chart.png" width="50%"/>
+
+3. Fire Count Time Series Plot: This time series plot tracks the fire counts over the years, allowing for the observation of patterns and trends in fire occurrences.
+
+<img src="C:\Users\sarah.auriemma\PycharmProjects\assignment-2-python-refresher-sauriemma11\docs\figures\Italy_time_series.png" width="50%"/>
+
+### Methods
+- **Data Retrieval**: We retrieved the dataset, `Argrofood_co2_emission.csv`, from a publicly accessible Google Drive link using `wget`:
+
+```commandline
+$ wget -O Argrofood_co2_emission.csv 'https://docs.google.com/uc?export=download&id=1Wytf3ryf9EtOwaloms8HEzLG0yjtRqxr'
+```
+
+- **Data Processing**: We processed the dataset using `get_data.py` to copy and save relevant data for Italy to a txt file:
+```commandline
+$ python get_data.py Argrofood_co2_emission.csv Italy
+```
+
+- **Data Visualization**: We created the three figures from the new dataset with `hist.py`:
+```commandline
+$ python hist.py Italy.txt Italy
+```
 
 ## Documentation 
 
 ### `my_utils.py` 
-
-
-#### `get_column(file_name, query_column, query_value, result_column=1)`
-- Opens a CSV file containing data delimited by commas.
-- Returns an array of values based on inputs.
-- Default output is a list of years that fires occurred (as integers).
-- Parameters:
-    - `file_name` (str): Name of the CSV file containing data.
-    - `query_column` (int): Column index for the query condition.
-    - `query_value` (str): Value used to find a match in the query column (e.g., country name).
-    - `result_column` (int, optional): Column index for the result. Default is 1, representing the year when the fire occurred for the specified country.
-- Raises a `ValueError` if the array is empty or if the specified result column does not exist.
-
-#### `find_mean(data)`
-- Calculates the mean of a list of integers.
-- Parameters:
-    - `data` (list): Array of integers.
-- Returns:
-    - `float`: Mean value of the integers in the array.
-- Raises a `ValueError` if the array is empty.
-
-#### `find_median(data)`
-- Calculates the median of an array of integers.
-- Parameters:
-    - `data` (list): Array of integers.
-- Returns:
-    - `float`: The median of the integers in the data array, or `None` if the array is empty.
-
-#### `find_std_dev(data)`
-- Calculates the standard deviation of an array of integers.
-- Parameters:
-    - `data` (list): An array of integers.
-- Returns:
-    - `float`: Standard deviation of the array.
-- Raises a `ValueError` if the array is empty.
-
+Collection of utilities used for data analysis, including mean, median, and std deviation.
 
 ### `print_fires.py` 
-This script will do brief analysis on fires by input country.
+This script performs a brief analysis on fires by input country. It provides command-line argparse for user input. 
 
-#### Command-line argparse
+<details>
+<summary> Command-line argparse </summary>
+
 Allows user to input parameters via command line.
 - `--country` (str): Specifies the name of the country to query.
 - `--country_column` (int): Specifies the column index for the country in the CSV file.
 - `--fires_column` (int): Specifies the column index for the amount of fires in the CSV file
 - `--file_name` (str): Specifies the name of the data file in CSV format.
 - `--operation` (str): Specifies the statistics operation to perform (e.g., "mean", "median", "stddev").
+</details>
 
-### `run.sh` 
-~~This shell script includes 3 examples for running `print_fires.py`, as required by the assignment.~~
-<br>
-With the 3.0 release, `run.sh` will now contain two examples of how `print_fires.py` could be used.
-
-#### Example that works:
+#### Example command:
 
 ```shell
 python print_fires.py --country Italy --country_column 0 --fires_column 1 --file_name ../Agrofood_co2_emission.csv
 ```
 
-#### Examples that give errors:
-```shell
-python print_fires.py --country USSR --country_column 0 --fires_column 3 ../Agrofood_c02.csv
-python print_fires.py --country "United States of America" --country_column 0 --fires_column 3 --file_name ../Agrofood_co2_emission.csv
-```
+### `run.sh` 
+A shell script for running `print_fires.py` with examples included. 
+
+
+
+### `get_data.py`
+A script to extract and process data from a CSV file and save it to a text file.
+
+
+### `hist.py`
+A script for generating histograms, bar charts, and time series plots, along with calculating statistics from data.
+
 
 
 ## Updates
