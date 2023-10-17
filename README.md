@@ -20,7 +20,7 @@ Analysis on the Italy dataset produced three key figures:
 
 1. Fire Count Histogram: This histogram visualizes the distribution of fire counts across different years, providing an overview of fire occurrences over time.
    
-<img src="C:\Users\sarah.auriemma\PycharmProjects\assignment-2-python-refresher-sauriemma11\docs\figures\Italy_histogram.png" width="50%">
+<img src="/docs/figures/Italy_histogram.png" width="50%">
 
 2. Urban and Rural Population Bar Chart: This bar chart shows the urban and rural population for each year. It helps identify trends and potential correlations between population changes and fire occurrences.
 
