@@ -9,3 +9,5 @@ dependencies:
   - ca-certificates
   - openssl
   - numpy
+  - matplotlib
+  - pandas

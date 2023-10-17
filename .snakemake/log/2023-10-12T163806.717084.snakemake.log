@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /home/jovyan/assignment-2-python-refresher-sauriemma11/snakefile, line 6:
+Missing input files for rule all:
+    affected files:
+        Afghanistan.png
