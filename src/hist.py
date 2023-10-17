@@ -3,11 +3,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import my_utils
 
+
 def load_data(data_file):
     data = np.genfromtxt(data_file, delimiter=',',
                          skip_header=0)  # Since there is no header in the
     # example
     return data
+
 
 def make_histogram(data, country_name):
     plt.hist(data[:, 1], bins=20, color="skyblue")
