@@ -1,0 +1,17 @@
+target_country = "Italy"
+
+# Download the data file
+rule download_data:
+    output:
+        'Agrofood_co2_emission.csv'
+    shell:
+        'wget -O {output} "https://docs.google.com/uc?export=download&id=1Wytf3ryf9EtOwaloms8HEzLG0yjtRqxr"'
+
+# Extract and process data for italy:
+rule extract_data:
+    input:
+        'Agrofood_co2_emission.csv'
+    output:
+        f'{target_country}.txt'
+    shell:
+        'python get_data.py {input} {output} {target_country}

@@ -1,6 +1,7 @@
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
+import my_utils
 
 
 def load_data(data_file):
@@ -8,17 +9,6 @@ def load_data(data_file):
                          skip_header=0)  # Since there is no header in the
     # example
     return data
-
-
-def get_country_name(data_file):
-    # Extract the country name from the file name
-    file_parts = data_file.split(".")
-    if len(file_parts) > 1:
-        country_name = file_parts[0]
-    else:
-        country_name = data_file  # If no extension, use the whole file name
-
-    return country_name
 
 
 def make_histogram(data, country_name):
@@ -75,15 +65,25 @@ def make_time_series(data, country_name):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python hist.py <data_file>")
+    if len(sys.argv) != 3:  # Check if there are three command line arguments
+        print("Usage: python hist.py <data_file> <str(country_name)>")
         sys.exit(1)
 
     data_file = sys.argv[1]
+    country_name = sys.argv[2]
 
     data = load_data(data_file)
-    country_name = get_country_name(data_file)
 
     make_histogram(data, country_name)
     make_bar_chart(data, country_name)
     make_time_series(data, country_name)
+
+    # Additional statistics using my_utils:
+    fire_counts = data[:, 1].astype(int)
+    mean_fire_count = my_utils.find_mean(fire_counts)
+    median_fire_count = my_utils.find_median(fire_counts)
+    std_dev_fire_count = my_utils.find_std_dev(fire_counts)
+
+    print(f"Mean Fire Count: {mean_fire_count}")
+    print(f"Median Fire Count: {median_fire_count}")
+    print(f"Standard Deviation of Fire Count: {std_dev_fire_count}")
