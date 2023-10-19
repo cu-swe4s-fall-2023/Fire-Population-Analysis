@@ -4,7 +4,7 @@ import sys
 
 sys.path.insert(0, '../../src')  # noqa
 from my_utils import *
-
+from hist import *
 
 class TestUtils(unittest.TestCase):
     def test_get_column_positive(self):
@@ -88,6 +88,9 @@ class TestUtils(unittest.TestCase):
         data = random.sample(range(1, 1000), 100)
         result = find_std_dev(data)
         self.assertGreaterEqual(result, 0)
+        
+    # def test_load_data_hist_positive(self):
+        
 
 
 if __name__ == '__main__':
