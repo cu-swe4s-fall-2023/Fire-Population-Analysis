@@ -88,10 +88,8 @@ class TestUtils(unittest.TestCase):
         data = random.sample(range(1, 1000), 100)
         result = find_std_dev(data)
         self.assertGreaterEqual(result, 0)
-        
-    # def test_load_data_hist_positive(self):
-        
 
-
+        
+        
 if __name__ == '__main__':
     unittest.main()
