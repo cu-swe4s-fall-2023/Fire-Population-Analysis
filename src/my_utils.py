@@ -1,3 +1,6 @@
+import sys
+
+
 def get_column(file_name, query_column, query_value, result_column=3):
     """
     Gets data from CSV file

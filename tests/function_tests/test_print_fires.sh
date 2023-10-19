@@ -6,6 +6,19 @@ source ssshtest
 
 STOP_ON_FAIL=0
 
+
+# Functional test for snakemake workflow:
+cd ../../src
+
+run snakemake_test snakemake -c1
+assert_exit_code 0
+
+assert_equal "Italy.txt" "$(ls Italy.txt)"
+assert_equal "Italy_histogram.png" "$(ls Italy_histogram.png)"
+assert_equal "Italy_bar_chart.png" "$(ls Italy_bar_chart.png)"
+assert_equal "Italy_time_series.png" "$(ls Italy_time_series.png)"
+
+
 cd ../../src
 
 run test_mean python print_fires.py --country Italy --country_column 0 --fires_column 2 --file_name ../Agrofood_co2_emission.csv --operation mean
@@ -56,3 +69,4 @@ assert_in_stdout "median"
 
 run test_exit_code python print_fires.py --country Italy --country_column 0 --fires_column 2 --file_name ../Agrofood_co2_emission.csv --operation invalid
 assert_exit_code 2
+

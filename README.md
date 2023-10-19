@@ -1,6 +1,4 @@
-# Best Practices 
-
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/oQi7O4AA)
+# SWE4S Best Practices 
 
 This repo contains the python project for brief data analysis of fires by country/year.
 
@@ -49,6 +47,12 @@ $ python get_data.py Argrofood_co2_emission.csv Italy
 - **Data Visualization**: We created the three figures from the new dataset with `hist.py`:
 ```commandline
 $ python hist.py Italy.txt Italy
+```
+
+- To generate the figures displayed in this README, simply run snakemake from ../src:
+
+```commandline
+$ snakemake -c1
 ```
 
 ## Documentation 
