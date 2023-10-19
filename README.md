@@ -1,20 +1,47 @@
-# SWE4S Best Practices 
+# SWE4S Best Practices
 
-This repo contains the python project for brief data analysis of fires by country/year.
+This repo contains the python project for brief data analysis of fires by
+country/year.
 
 Uses repo from assignment-2 (python refresher).
 
 ## Table of Contents
 
+<!-- TOC -->
 
-## Introduction 
-This project focuses on the analysis of fires by country and year. The dataset includes information on the occurrence of fires in different countries over time. The analysis aims to provide insights into fire patterns and their relationship to factors such as urban and rural population.
+* [SWE4S Best Practices](#swe4s-best-practices-)
+  * [Table of Contents](#table-of-contents)
+  * [Introduction](#introduction-)
+  * [Results](#results-)
+    * [Methods](#methods)
+  * [Documentation](#documentation-)
+    * [`my_utils.py`](#myutilspy-)
+    * [`print_fires.py`](#printfirespy-)
+      * [Example command:](#example-command)
+    * [`run.sh`](#runsh-)
+    * [`get_data.py`](#getdatapy)
+    * [`hist.py`](#histpy)
+  * [Updates](#updates)
+  * [Usage <a name="usage"></a>](#usage-a-nameusagea)
+  * [LICENSE](#license)
 
-## Results 
+<!-- TOC -->
+
+## Introduction
+
+This project focuses on the analysis of fires by country and year. The dataset
+includes information on the occurrence of fires in different countries over
+time. The analysis aims to provide insights into fire patterns and their
+relationship to factors such as urban and rural population.
+
+## Results
+
 Analysis on the Italy dataset produced three key figures:
 
-1. Fire Count Histogram: This histogram visualizes the distribution of fire counts across different years, providing an overview of fire occurrences over time.
-   
+1. Fire Count Histogram: This histogram visualizes the distribution of fire
+   counts across different years, providing an overview of fire occurrences
+   over time.
+
 <img src="/docs/figures/Italy_histogram.png" width="50%">
 
 2. Urban and Rural Population Bar Chart: This bar chart shows the urban and rural population for each year. It helps identify trends and potential correlations between population changes and fire occurrences.
