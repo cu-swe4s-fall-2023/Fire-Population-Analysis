@@ -4,7 +4,6 @@ import sys
 
 sys.path.insert(0, '../../src')  # noqa
 from my_utils import *
-from hist import *
 
 class TestUtils(unittest.TestCase):
     def test_get_column_positive(self):
