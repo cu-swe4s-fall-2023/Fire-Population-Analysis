@@ -5,9 +5,6 @@ This repo contains the python project for brief data analysis of fires by countr
 Uses repo from assignment-2 (python refresher).
 
 ## Table of Contents
-fdsfdsa 
-fdsafdsa
-fdsafdsa
 
 
 ## Introduction 
@@ -88,23 +85,33 @@ A shell script for running `print_fires.py` with examples included.
 ### `get_data.py`
 A script to extract and process data from a CSV file and save it to a text file.
 
-
 ### `hist.py`
-A script for generating histograms, bar charts, and time series plots, along with calculating statistics from data.
 
-
+A script for generating histograms, bar charts, and time series plots, along
+with calculating statistics from data.
 
 ## Updates
+
 <details>
 <summary>Expand for version release updates</summary>
 
+### V 5.0
+
+- Added snakemake workflow to project.
+- Added `hist.py` and `get_data.py` to create figures from csv data.
+- Added scientific findings and methodology to README.
+
 ### V 4.1
+
 - Patched `.test.yml` to check for PEP8 style using pycodestyle action.
 
-### V 4.0 
-- Implemented automated testing on branch push and pull requests on main branch.
+### V 4.0
 
-### V 3.1 
+- Implemented automated testing on branch push and pull requests on main
+  branch.
+
+### V 3.1
+
 - Added documentation on how to run tests.
 
 ### V 3.0 
