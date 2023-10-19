@@ -5,6 +5,7 @@ import sys
 sys.path.insert(0, '../../src')  # noqa
 from my_utils import *
 
+
 class TestUtils(unittest.TestCase):
     def test_get_column_positive(self):
         file_name = '../../Agrofood_co2_emission.csv'
@@ -88,7 +89,6 @@ class TestUtils(unittest.TestCase):
         result = find_std_dev(data)
         self.assertGreaterEqual(result, 0)
 
-        
-        
+
 if __name__ == '__main__':
     unittest.main()
