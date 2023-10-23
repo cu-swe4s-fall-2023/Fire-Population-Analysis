@@ -1,9 +1,9 @@
-# SWE4S Best Practices
+# Fire and Population Analysis
 
 This repo contains the python project for brief data analysis of fires by
 country/year.
 
-Uses repo from assignment-2 (python refresher).
+Uses repo from assignment-2 from CU Boulder Fall 2023 SWE4S course.
 
 ## Table of Contents
 
@@ -29,10 +29,7 @@ Uses repo from assignment-2 (python refresher).
 
 ## Introduction
 
-This project focuses on the analysis of fires by country and year. The dataset
-includes information on the occurrence of fires in different countries over
-time. The analysis aims to provide insights into fire patterns and their
-relationship to factors such as urban and rural population.
+This project focuses on the analysis of fires by country and year. The dataset includes information on the occurrence of fires in different countries over time. The analysis aims to provide insights into fire patterns and their relationship to factors such as urban and rural population.
 
 ## Results
 
